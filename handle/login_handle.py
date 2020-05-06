@@ -14,6 +14,10 @@ class LoginHandle(object):
     def send_phone_number(self,phone_number):
         self.Login.get_element("phone_number").send_keys(phone_number)
 
+    # 获取验证码
+    def get_phone_code(self):
+        self.Login.get_element("get_code").click()
+
     # 输入验证码
     def send_phone_code_element(self,code):
         self.Login.get_element("Verification_code").send_keys(code)
@@ -24,7 +28,7 @@ class LoginHandle(object):
 
     # 获取错误信息
     def get_error_message(self):
-        time.sleep(2)
+        time.sleep(1)
         message = self.Login.get_element("error_message").text
         return message
     
@@ -41,6 +45,6 @@ if __name__ == "__main__":
     driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/login")
     element_a = LoginHandle(driver)
     element_a.send_phone_number("15011111111")
-    element_a.send_phone_code_element("1234")
+    element_a.send_phone_code_element("1235")
     element_a.click_button()
-    time.sleep(2)
+    print(element_a.get_error_message())

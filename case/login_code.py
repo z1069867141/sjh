@@ -29,9 +29,34 @@ class login_test(unittest.TestCase):
         cls.log.close_handle()
 
     def test_login_forward_process(self):
-        self.logger.info("this is log message")
-        sucess = self.login.login_forward_process("15011111112","1234")
-        self.assertTrue(sucess,"测试成功")
+        self.logger.info("this is test_login_forward_process")
+        sucess = self.login.login_forward_process("15011111111")
+        self.assertTrue(sucess,"test_login_forward_process run")
+
+    # 正常登陆账号
+    def test_login_phone_number_error(self):
+        self.logger.info("this is test_login_phone_number_error")
+        result = self.login.login_error("手机号不存在","15011111112","1234")
+        self.assertTrue(result,"test_login_phone_number_error run")
+
+    # 验证码错误
+    def test_login_code_error(self):
+        self.logger.info("this is test_login_phone_number_error")
+        result = self.login.login_error("验证码有误！","15011111111","123")
+        self.assertTrue(result,"test_login_phone_number_error run")
+
+    # 手机号正确，验证码错误
+    def test_login_phone_and_code_error(self):
+        self.logger.info("this is test_login_phone_number_error")
+        result = self.login.login_error("验证码有误！","15011111112","123")
+        self.assertTrue(result,"test_login_phone_number_error run")
+
+    # 输入不存在手机号，验证码输入正确
+    def test_login_phone_error(self):
+        self.logger.info("this is test_login_phone_number_error")
+        result = self.login.login_error("验证码有误！","15011111112","123")
+        self.assertTrue(result,"test_login_phone_number_error run")
+    
 
 if __name__ == "__main__":
     # driver = webdriver.Chrome()
@@ -49,6 +74,7 @@ if __name__ == "__main__":
     """
     suit = unittest.TestSuite()
     suit.addTest(login_test("test_login_forward_process"))
+    # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)
     runner.run(suit)
