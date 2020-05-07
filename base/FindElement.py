@@ -27,6 +27,8 @@ class FindElement(object):
                 return self.driver.find_elements_by_class_name(value)[No]
             elif by == "xpath":
                 return self.driver.find_element_by_xpath(value)
+            elif by == "tag_name":
+                return self.driver.find_element_by_tag_name(value)
         except:
             return None
 

@@ -28,7 +28,7 @@ class LoginHandle(object):
 
     # 获取错误信息
     def get_error_message(self):
-        time.sleep(1)
+        time.sleep(2)
         message = self.Login.get_element("error_message").text
         return message
     
@@ -40,6 +40,18 @@ class LoginHandle(object):
         except:
             return None
 
+    # 切换密码登录
+    def click_switch_password(self):
+        self.Login.get_element("get_password_mode").click()
+
+    # 获取密码登录文案
+    def click_switch_password_text(self):
+        try:
+            text = self.Login.get_element("get_password_mode").text
+            return text
+        except:
+            return None
+            
 if __name__ == "__main__":
     driver = webdriver.Chrome()
     driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/login")

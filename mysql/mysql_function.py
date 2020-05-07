@@ -22,7 +22,6 @@ class mysql_function(object):
         self.cursor.execute(sql_search)
         row_3 = self.cursor.fetchall()
         row_4 = row_3[0][0]
-        print(row_4)
         self.cursor.close()
         self.connect.close()
         return row_4

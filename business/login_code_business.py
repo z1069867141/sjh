@@ -25,11 +25,17 @@ class login_business(object):
         self.login_h.click_button()
         time.sleep(2)
         if self.login_h.get_login_button_text() == None:
-            print("成功")
             return True
         else:
-            print("失败")
             return False
+
+    def login_switch_sms_to_password(self):
+        self.login_h.click_switch_password()
+        if self.login_h.click_switch_password_text == None:
+            return False
+        else:
+            return True
+
 
     def login_error(self,error_message,phone_number,phone_code):
         self.user_base(phone_number,phone_code)
