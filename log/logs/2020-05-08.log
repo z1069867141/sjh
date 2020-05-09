@@ -1,0 +1,15 @@
+2020-05-08 03:42:28,655 login_code.py---> test_login_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 03:42:34,525 login_code.py---> test_login_forward_process 20 INFO this is test_login_forward_process
+2020-05-08 03:42:42,531 login_code.py---> test_login_phone_and_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 03:42:48,521 login_code.py---> test_login_phone_error 20 INFO this is test_login_phone_number_error
+2020-05-08 03:42:54,393 login_code.py---> test_login_switch_sms_to_password 20 INFO this is test_login_switch_sms_to_password
+2020-05-08 11:44:24,233 login_code.py---> test_login_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:44:28,075 login_code.py---> test_login_forward_process 20 INFO this is test_login_forward_process
+2020-05-08 11:44:32,240 login_code.py---> test_login_phone_and_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:44:36,157 login_code.py---> test_login_phone_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:44:40,235 login_code.py---> test_login_switch_sms_to_password 20 INFO this is test_login_switch_sms_to_password
+2020-05-08 11:46:18,905 login_code.py---> test_login_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:46:25,143 login_code.py---> test_login_forward_process 20 INFO this is test_login_forward_process
+2020-05-08 11:46:33,436 login_code.py---> test_login_phone_and_code_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:46:39,405 login_code.py---> test_login_phone_error 20 INFO this is test_login_phone_number_error
+2020-05-08 11:46:46,200 login_code.py---> test_login_switch_sms_to_password 20 INFO this is test_login_switch_sms_to_password

@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__),".."))
-from handle.login_handle import LoginHandle
+import handle.login_handle as login_handle
 from selenium import webdriver
 import time
 import pymysql
@@ -9,7 +9,7 @@ from mysql.mysql_function import mysql_function
 
 class login_business(object):
     def __init__(self,driver):
-        self.login_h = LoginHandle(driver)
+        self.login_h = login_handle.LoginSMSHandle(driver)
     
     def user_base(self,phone_number,phone_code):
         self.login_h.send_phone_number(phone_number)
@@ -36,6 +36,12 @@ class login_business(object):
         else:
             return True
 
+    def click_button(self,error_message):
+        self.login_h.click_button()
+        if self.login_h.get_error_message() == error_message:
+            return True
+        else:
+            return False
 
     def login_error(self,error_message,phone_number,phone_code):
         self.user_base(phone_number,phone_code)

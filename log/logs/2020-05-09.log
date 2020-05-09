@@ -1,0 +1,7 @@
+2020-05-09 11:33:07,790 login_code.py---> test_click_button 20 INFO this is test_click_btton
+2020-05-09 14:06:46,615 login_password.py---> test_login_code_error 20 INFO this is test_login_phone_number_error
+2020-05-09 14:06:52,929 login_password.py---> test_login_forward_process 20 INFO this is test_login_forward_process
+2020-05-09 14:06:57,271 login_password.py---> test_login_phone_and_code_error 20 INFO this is test_login_phone_number_error
+2020-05-09 14:07:03,697 login_password.py---> test_no_send_click_button 20 INFO this is test_no_send_click_button
+2020-05-09 14:08:05,112 login_password.py---> test_login_forward_process 20 INFO this is test_login_forward_process
+2020-05-09 14:09:02,496 login_password.py---> test_login_forward_process 20 INFO this is test_login_forward_process

@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__),".."))
-from business.login_code_business import login_business
+from business.login_password_business import login_business
 from selenium import webdriver
 import unittest
 import HTMLTestRunner
@@ -17,7 +17,7 @@ class login_test(unittest.TestCase):
     def setUp(self):
         self.imgs=[]
         self.driver = webdriver.Chrome()
-        self.driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/login")
+        self.driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/pwdlogin?qythc=")
         self.login = login_business(self.driver)
 
     def tearDown(self):
@@ -30,30 +30,23 @@ class login_test(unittest.TestCase):
 
     def test_login_forward_process(self):
         self.logger.info("this is test_login_forward_process")
-        sucess = self.login.login_forward_process("15011111111")
+        sucess = self.login.login_forward_process("15011111111","Aa111111")
         self.assertTrue(sucess,"test_login_forward_process run")
 
-    def test_login_switch_sms_to_password(self):
-        self.logger.info("this is test_login_switch_sms_to_password")
-        result = self.login.login_switch_sms_to_password()
-        self.assertTrue(result,"test_login_switch_sms_to_password")
+    def test_no_send_click_button(self):
+        self.logger.info("this is test_no_send_click_button")
+        result = self.login.click_button("账号密码不存在")
 
-    # 验证码错误
+    # 手机号正确密码错误
     def test_login_code_error(self):
         self.logger.info("this is test_login_phone_number_error")
-        result = self.login.login_error("验证码不存在或已过期","15011111111","123")
+        result = self.login.login_error("账号或密码不存在","15011111111","123")
         self.assertTrue(result,"test_login_phone_number_error run")
 
-    # 手机号正确，验证码错误
+    # 手机号号错误，密码正确
     def test_login_phone_and_code_error(self):
         self.logger.info("this is test_login_phone_number_error")
-        result = self.login.login_error("验证码不存在或已过期","15011111112","123")
-        self.assertTrue(result,"test_login_phone_number_error run")
-
-    # 输入不存在手机号，验证码输入正确
-    def test_login_phone_error(self):
-        self.logger.info("this is test_login_phone_number_error")
-        result = self.login.login_error("验证码不存在或已过期","15011111112","123")
+        result = self.login.login_error("账号或密码不存在","15011111112","123")
         self.assertTrue(result,"test_login_phone_number_error run")
 
 if __name__ == "__main__":
@@ -71,7 +64,7 @@ if __name__ == "__main__":
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
-    suit.addTest(login_test("test_login_phone_error"))
+    suit.addTest(login_test("test_login_forward_process"))
     # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)

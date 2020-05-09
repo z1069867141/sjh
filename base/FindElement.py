@@ -5,11 +5,13 @@ from reading_mode.read_ini import ReadIni
 from selenium import webdriver
 
 class FindElement(object):
-    def __init__(self, driver):
+    def __init__(self, driver,file_path=None,node=None):
         self.driver = driver
+        self.file_path = file_path
+        self.node = node
 
-    def get_element(self, key, node=None):
-        read_ini = ReadIni(node)
+    def get_element(self, key):
+        read_ini = ReadIni(self.file_path,self.node)
         data = read_ini.get_value(key)
         data_list = data.split(">")
         by = data_list[0]

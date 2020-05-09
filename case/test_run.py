@@ -1,6 +1,8 @@
 import unittest
 import os
-from login_code import login_test
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+from case.login_code import login_test
 import HTMLTestRunner
 
 report_file_path = os.path.join(os.getcwd()+"/report/"+"login.html")

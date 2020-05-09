@@ -5,7 +5,7 @@ from base.FindElement import FindElement
 from selenium import webdriver
 import time
 
-class LoginHandle(object):
+class LoginSMSHandle(object):
     def __init__(self,driver):
         self.driver = driver
         self.Login = FindElement(self.driver)
@@ -51,12 +51,39 @@ class LoginHandle(object):
             return text
         except:
             return None
-            
+
+class Login_password_Handle(object):
+    def __init__(self,driver):
+        self.driver = driver
+        self.Login = FindElement(self.driver,file_path=None,node="LogPasswordElement")
+
+    def send_phone_number(self,phone):
+        self.Login.get_element("phone_number").send_keys(phone)
+
+    def send_password_element(self,password):
+        self.Login.get_element("phone_password").send_keys(password)
+
+    def click_button(self):
+        self.Login.get_element("login_button").click()
+
+        # 获取错误信息
+    def get_error_message(self):
+        time.sleep(2)
+        message = self.Login.get_element("error_message").text
+        return message
+
+    def get_login_button_text(self):
+        time.sleep(2)
+        try:
+            text = self.Login.get_element("login_button").text
+            return text
+        except:
+            return None
+
 if __name__ == "__main__":
     driver = webdriver.Chrome()
-    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/login")
-    element_a = LoginHandle(driver)
+    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/pwdlogin?qythc=")
+    element_a = Login_password_Handle(driver)
     element_a.send_phone_number("15011111111")
-    element_a.send_phone_code_element("1235")
+    element_a.send_password_element("Aa111111")
     element_a.click_button()
-    print(element_a.get_error_message())
