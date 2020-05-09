@@ -8,7 +8,7 @@ import HTMLTestRunner
 import time
 from log.user_log import userlog
 
-class login_test(unittest.TestCase):
+class login_c_test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.log = userlog()
