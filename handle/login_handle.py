@@ -66,14 +66,26 @@ class Login_password_Handle(object):
     def click_button(self):
         self.Login.get_element("login_button").click()
 
-        # 获取错误信息
+    def click_code_mode_button(self):
+        self.Login.get_element("code_mode").click()
+
+    # 获取验证码登陆时获取验证码按钮的文案
+    def get_code_text(self):
+        time.sleep(1)
+        try:
+            text = self.Login.get_element("get_code_text").text
+            return text
+        except: 
+            return None
+    
+    # 获取错误信息
     def get_error_message(self):
-        time.sleep(2)
+        time.sleep(1)
         message = self.Login.get_element("error_message").text
         return message
 
     def get_login_button_text(self):
-        time.sleep(2)
+        time.sleep(1)
         try:
             text = self.Login.get_element("login_button").text
             return text

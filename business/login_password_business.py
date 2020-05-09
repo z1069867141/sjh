@@ -23,6 +23,13 @@ class login_business(object):
         else:
             return False
 
+    def click_code_mode_button(self):
+        self.login_h.click_code_mode_button()
+        if self.login_h.get_code_text() == None:
+            return False
+        else:
+            return True
+
     def click_button(self,error_message):
         self.login_h.click_button()
         if self.login_h.get_error_message() == error_message:

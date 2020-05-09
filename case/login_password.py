@@ -33,9 +33,17 @@ class login_test(unittest.TestCase):
         sucess = self.login.login_forward_process("15011111111","Aa111111")
         self.assertTrue(sucess,"test_login_forward_process run")
 
+    # 是否切换到了验证码登陆界面
+    def test_switch_code_mode(self):
+        self.logger.info("this is switch_code_mode")
+        result = self.login.click_code_mode_button()
+        self.assertTrue(result,"switch_code_mode run")
+
+
     def test_no_send_click_button(self):
         self.logger.info("this is test_no_send_click_button")
         result = self.login.click_button("账号密码不存在")
+        self.assertTrue(result,"test_no_send_click_button run")
 
     # 手机号正确密码错误
     def test_login_code_error(self):
@@ -46,13 +54,13 @@ class login_test(unittest.TestCase):
     # 手机号号错误，密码正确
     def test_login_phone_and_code_error(self):
         self.logger.info("this is test_login_phone_number_error")
-        result = self.login.login_error("账号或密码不存在","15011111112","123")
+        result = self.login.login_error("账号或密码不存在","15011111112","Aa111111")
         self.assertTrue(result,"test_login_phone_number_error run")
 
 if __name__ == "__main__":
     report_file_path = os.path.join(os.getcwd()+"/report/"+"login.html")
     f = open(report_file_path,"wb")
-    # suit = unittest.main()
+    # unittest.main()
     """
     指定执行的test
     suit = unittest.TestSuite()
@@ -64,7 +72,7 @@ if __name__ == "__main__":
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
-    suit.addTest(login_test("test_login_forward_process"))
+    suit.addTest(login_test("test_switch_code_mode"))
     # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)
