@@ -26,3 +26,4 @@
 2020-05-09 14:29:37,417 login_password.py---> test_switch_code_mode 20 INFO this is switch_code_mode
 2020-05-09 14:29:53,025 login_password.py---> test_switch_code_mode 20 INFO this is switch_code_mode
 2020-05-09 14:30:46,624 login_password.py---> test_switch_code_mode 20 INFO this is switch_code_mode
+2020-05-09 14:46:41,237 login_password.py---> test_switch_retrieve_the_password_mode 20 INFO this is test_switch_retrieve_the_password_mode

@@ -69,6 +69,9 @@ class Login_password_Handle(object):
     def click_code_mode_button(self):
         self.Login.get_element("code_mode").click()
 
+    def click_retrieve_the_password(self):
+        self.Login.get_element("retrieve_the_password").click()
+
     # 获取验证码登陆时获取验证码按钮的文案
     def get_code_text(self):
         time.sleep(1)
@@ -76,6 +79,15 @@ class Login_password_Handle(object):
             text = self.Login.get_element("get_code_text").text
             return text
         except: 
+            return None
+
+    # 获取找回密码返回登陆的文案
+    def get_return_password_mode_text(self):
+        time.sleep(1)
+        try: 
+            text = self.Login.get_element("return_password_mode_text").text
+            return text
+        except:
             return None
     
     # 获取错误信息

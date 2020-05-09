@@ -33,11 +33,17 @@ class login_test(unittest.TestCase):
         sucess = self.login.login_forward_process("15011111111","Aa111111")
         self.assertTrue(sucess,"test_login_forward_process run")
 
-    # 是否切换到了验证码登陆界面
+    # 切换到了验证码登陆界面
     def test_switch_code_mode(self):
-        self.logger.info("this is switch_code_mode")
+        self.logger.info("this is test_switch_code_mode")
         result = self.login.click_code_mode_button()
-        self.assertTrue(result,"switch_code_mode run")
+        self.assertTrue(result,"test_switch_code_mode run")
+
+    # 切换到找回密码界面
+    def test_switch_retrieve_the_password_mode(self):
+        self.logger.info("this is test_switch_retrieve_the_password_mode")
+        result = self.login.click_retrieve_the_password_button()
+        self.assertTrue(result,"test_switch_retrieve_the_password_mode run")
 
 
     def test_no_send_click_button(self):
@@ -72,7 +78,7 @@ if __name__ == "__main__":
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
-    suit.addTest(login_test("test_switch_code_mode"))
+    suit.addTest(login_test("test_switch_retrieve_the_password_mode"))
     # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)

@@ -29,6 +29,13 @@ class login_business(object):
             return False
         else:
             return True
+        
+    def click_retrieve_the_password_button(self):
+        self.login_h.click_retrieve_the_password()
+        if self.login_h.get_return_password_mode_text() == None:
+            return False
+        else:
+            return True
 
     def click_button(self,error_message):
         self.login_h.click_button()
