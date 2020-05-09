@@ -33,6 +33,7 @@ class login_business(object):
     def click_retrieve_the_password_button(self):
         self.login_h.click_retrieve_the_password()
         if self.login_h.get_return_password_mode_text() == None:
+            print("False")
             return False
         else:
             return True
@@ -55,4 +56,4 @@ if __name__ == "__main__":
     driver = webdriver.Chrome()
     driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/pwdlogin?qythc=")
     login = login_business(driver)
-    login.login_error("1","15011111111","Aa11111")
+    login.click_retrieve_the_password_button()

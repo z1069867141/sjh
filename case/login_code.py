@@ -77,7 +77,7 @@ if __name__ == "__main__":
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
-    suit.addTest(login_test("test_click_button"))
+    suit.addTest(login_c_test("test_login_forward_process"))
     # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)

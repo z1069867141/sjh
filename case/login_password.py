@@ -48,7 +48,7 @@ class login_pw_test(unittest.TestCase):
 
     def test_no_send_click_button(self):
         self.logger.info("this is test_no_send_click_button")
-        result = self.login.click_button("账号密码不存在")
+        result = self.login.click_button("账号或密码不存在")
         self.assertTrue(result,"test_no_send_click_button run")
 
     # 手机号正确密码错误
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
     # suit.addTest(login_test("test_login_switch_sms_to_password"))
-    suit.addTest(login_test("test_switch_retrieve_the_password_mode"))
+    suit.addTest(login_pw_test("test_no_send_click_button"))
     # suit.addTest(login_test("test_login_code_error"))
     #unittest.TextTestRunner().run(suit)
     runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="This is login forward process",description="这个是我们第一次报告",verbosity=2)

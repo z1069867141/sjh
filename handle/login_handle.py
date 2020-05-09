@@ -104,10 +104,62 @@ class Login_password_Handle(object):
         except:
             return None
 
+class Login_retireve_password_Handle(object):
+    def __init__(self,driver):
+        self.driver = driver
+        self.Login = FindElement(self.driver,file_path=None,node="Retrieve")
+
+    def send_phone_number(self,phone):
+        self.Login.get_element("phone_number").send_keys(phone)
+
+    def send_phone_code(self,code):
+        self.Login.get_element("Verification_code").send_keys(code)
+
+    def send_password(self,password):
+        self.Login.get_element("password").send_keys(password)
+
+    def send_password_confirm(self,confirm_password):
+        self.Login.get_element("confirm_password").send_keys(confirm_password)
+
+    def click_get_verification_code(self):
+        self.Login.get_element("get_code").click()
+
+    def click_login_button(self):
+        self.Login.get_element("login_button").click()
+    
+    def click_return_password_mode(self):
+        self.Login.get_element("return_password_mode_button").click()
+
+    def get_error_message(self):
+        try:
+            time.sleep(2)
+            text = self.Login.get_element("error_message").text
+            return text
+        except: 
+            return None
+    
+    def click_button(self):
+        self.Login.get_element("login_button").click()
+
+
+    # 判断返回登录按钮文案是否存在
+    def get_return_password_button_text(self):
+        try: 
+            time.sleep(4)
+            text = self.Login.get_element("return_password_mode_text").text
+            return text
+        except:
+            return None
+
+    
+
 if __name__ == "__main__":
     driver = webdriver.Chrome()
-    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/pwdlogin?qythc=")
-    element_a = Login_password_Handle(driver)
-    element_a.send_phone_number("15011111111")
-    element_a.send_password_element("Aa111111")
-    element_a.click_button()
+    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/changepwd")
+    element_a = Login_retireve_password_Handle(driver)
+    # element_a.send_phone_number("15011111111")
+    # element_a.send_password_element("Aa111111")
+    element_a.click_return_password_mode()
+    a = element_a.get_return_password_button_text()
+    print(a)
+    # element_a.click_button()
