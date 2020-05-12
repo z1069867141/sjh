@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+sys.path.append(os.getcwd())
 import handle.login_handle as login_handle
 from selenium import webdriver
 import time

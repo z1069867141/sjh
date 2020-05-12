@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append("..")
+sys.path.append(os.getcwd())
 from business.login.login_password_business import login_business
 from selenium import webdriver
 import unittest
