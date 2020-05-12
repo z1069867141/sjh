@@ -33,7 +33,6 @@ class login_business(object):
     def click_retrieve_the_password_button(self):
         self.login_h.click_retrieve_the_password()
         if self.login_h.get_return_password_mode_text() == None:
-            print("False")
             return False
         else:
             return True

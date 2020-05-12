@@ -1,7 +1,7 @@
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__),".."))
-from business.login_Retrieve_password_business import login_business
+sys.path.append(os.getcwd())
+from business.login.login_Retrieve_password_business import login_business
 from selenium import webdriver
 import unittest
 import HTMLTestRunner
