@@ -22,3 +22,16 @@
 2020-05-13 01:06:29,527 home_page.py---> test_sharing_rule 20 INFO this is test_sharing_rule
 2020-05-13 01:06:41,985 home_page.py---> test_sleep_channel 20 INFO this is test_sleep_channel
 2020-05-13 01:06:47,671 home_page.py---> test_switch_class 20 INFO this is test_switch_class
+2020-05-13 23:14:14,814 class_list.py---> test_click_class_1 20 INFO this is test_click_class_1
+2020-05-13 23:14:32,067 class_list.py---> test_click_class_2 20 INFO this is test_click_class_2
+2020-05-13 23:15:14,882 class_list.py---> test_click_class_2 20 INFO this is test_click_class_2
+2020-05-13 23:22:27,070 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:23:16,520 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:23:41,205 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:24:20,339 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:24:42,923 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:26:29,240 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:27:17,990 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:29:32,484 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:47:35,081 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber
+2020-05-13 23:48:29,241 class_list.py---> test_click_tabber 20 INFO this is test_click_tabber

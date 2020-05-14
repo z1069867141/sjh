@@ -9,7 +9,6 @@ class FindElement(object):
         self.driver = driver
         self.file_path = file_path
         self.node = node
-        self.driver.implicitly_wait(5)
 
     def get_element(self, key):
         read_ini = ReadIni(self.file_path,self.node)
